@@ -9,4 +9,4 @@ Holding place for my messing around with Fastai's course work.
 5. Ensure the deps were correctly installed:
     - Run `python3` and try `import fastai` and hit Return/Enter
     - If you get a `ModuleNotFound` error, your virtualenv may not be active or `pip3 install` may have failed, retry those steps if necessary.
-6. Navigate to (Practical Deep Learning)[https://course.fast.ai/Lessons/lesson1.html] and get to AI'ing!
+6. Navigate to [Practical Deep Learning](https://course.fast.ai/Lessons/lesson1.html) and get to AI'ing!
