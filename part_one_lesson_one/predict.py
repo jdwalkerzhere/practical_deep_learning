@@ -1,6 +1,6 @@
 from os import listdir, path
 from fastcore.all import *
-from fastai.vision import *
+from fastai.vision.all import *
 from fastai.learner import load_learner
 from PIL import Image
 
@@ -8,7 +8,8 @@ from PIL import Image
 def main():
     selected_model = None
     while selected_model == None:
-        present_models = {i: f for i, f in enumerate(listdir('.'), start=1) if path.isfile(f) and f.endswith('pkl')}
+        present_models = [f for f in listdir('.') if path.isfile(f) and f.endswith('pkl')]
+        present_models = {i: f for i, f in enumerate(present_models, start=1)}
 
         print("Which model do you want to use? Select with number.")
         for ind, model in present_models.items():
@@ -36,7 +37,7 @@ def main():
     if not path.exists(image_path):
         raise RuntimeError(f'No path {image_path} exists')
 
-    image = Image.open(image_path) 
+    image = PILImage.create(image_path) 
     is_a, _, probs = learner.predict(image)
     print(f'This image is a {is_a}')
     print(f'Probability: {probs}')
